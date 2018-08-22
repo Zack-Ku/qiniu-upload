@@ -4,7 +4,7 @@
 
 0. 安装七牛依赖
 ````
-    python -m pip install qiniu`
+    python -m pip install qiniu
 ````
 1. 修改配置
 ````
