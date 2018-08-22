@@ -1,8 +1,11 @@
 # 七牛OSS文件上传工具
 七牛图片上传工具，实现快速上传并返回访问链接。
-使用方法
+使用方法:
+
 0. 安装七牛依赖
-`python -m pip install qiniu`
+````
+    python -m pip install qiniu`
+````
 1. 修改配置
 ````
     access_key = '你的AccessKey'
