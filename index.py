@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 import os
@@ -13,13 +14,15 @@ else:
     file_path = sys.argv[2]
 
 # 个人中心->密匙管理->AK
-access_key = '你的AccessKey'
+access_key = ''
 # 个人中心->密匙管理->SK
-secret_key = '你的SecretKey'
+secret_key = ''
 # 七牛空间名
-bucket_name = '你的存储空间名'
+bucket_name = ''
 # 访问域名
-domain_name = '你的域名'
+domain_name = ''
+# 图片样式
+style_code = "?imageView2/0/q/75|watermark/2/text/WmFja-ivtOeggQ==/font/5b6u6L2v6ZuF6buR/fontsize/400/fill/I0Y2RjZGNg==/dissolve/60/gravity/SouthEast/dx/10/dy/10|imageslim"
 
 qiniu_auth = Auth(access_key, secret_key)
 
@@ -31,9 +34,9 @@ def upload_qiniu(input_path):
     token = qiniu_auth.upload_token(bucket_name, key)
     ret, info = put_file(token, key, input_path, check_crc=True)
     if ret and ret['key'] == key:
-        print('%s done' % (domain_name + dir_set + filename))
+        print('%s done' % (domain_name + dir_set + filename + style_code))
     else:
-        print('%s error' % (domain_name + dir_set + filename))
+        print('%s error' % (domain_name + dir_set + filename + style_code))
 
 def upload_all_files(input_path):
     if os.path.isfile(input_path):

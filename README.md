@@ -12,6 +12,7 @@
     secret_key = '你的SecretKey'
     bucket_name = '你的存储空间名'
     domain_name = '你的域名'
+    style_code = '七牛样式代码'
 ````
 
 2. 执行命令
